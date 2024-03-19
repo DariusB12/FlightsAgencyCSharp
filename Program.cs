@@ -11,10 +11,7 @@ using ProjectCS.repository.interfaces;
 namespace ProjectCS
 {
     /// <summary>
-    ///
-    /// REPO TICKET
     /// CONFIGURARE LOG4NET
-    /// PUSH PE GITHUB
     /// FAC BRANCHMERGE LA JAVA
     /// </summary>
     internal class Program
@@ -33,10 +30,19 @@ namespace ProjectCS
             // IEnumerable<Flight> all = flightRepo.findByDestinationAndDate("Bucurestii", DateTime.Parse("2025-05-17"));
             IEnumerable<Flight> all = flightRepo.findAllAvailable();
             
-            foreach (var flight in all)
-            {
-                Console.WriteLine(flight.Destination + " " + flight.SeatsNo + flight.DepartureDateTime);
-            }
+            // foreach (var flight in all)
+            // {
+            //     Console.WriteLine(flight.Destination + " " + flight.SeatsNo + flight.DepartureDateTime);
+            // }
+
+            TicketDBRepository ticketDbRepository = new TicketDBRepository(prop);
+            Flight flight = new Flight(null, DateTime.Now, null, 8);
+            flight.Id = 2;
+            List<String> namesTourists = new List<string>();
+            namesTourists.Add("aadsfsdbgf");
+            namesTourists.Add("dfgdfhgvc");
+            Ticket ticket = new Ticket("null", namesTourists, "null", 1, flight);
+            ticketDbRepository.save(ticket);
         }
 
         static string GetConnectionStringByName(string name)

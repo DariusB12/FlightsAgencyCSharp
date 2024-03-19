@@ -9,7 +9,7 @@ namespace ProjectCS.repository.DBRepository
 {
     public class FlightDBRepository : IFlightDBRepository
     {
-        private static readonly ILog log = LogManager.GetLogger("UserDBRepository");
+        private static readonly ILog log = LogManager.GetLogger("FlightDBRepository");
         private IDictionary<String, String> prop;
 
         public FlightDBRepository(IDictionary<string, string> prop)

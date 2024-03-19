@@ -76,6 +76,8 @@
         <Compile Include="repository\interfaces\IFlightDBRepository.cs" />
         <Compile Include="repository\interfaces\ITicketDBRepository.cs" />
         <Compile Include="repository\interfaces\IUserDBRepository.cs" />
+        <Compile Include="validator\IValidator.cs" />
+        <Compile Include="validator\TicketValidator.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
