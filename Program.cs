@@ -11,8 +11,7 @@ using ProjectCS.repository.interfaces;
 namespace ProjectCS
 {
     /// <summary>
-    /// CONFIGURARE LOG4NET
-    /// FAC BRANCHMERGE LA JAVA
+    /// CONFIGURARE LOG4NET - MERGE DOAR CU CALE ABSOLUTA
     /// </summary>
     internal class Program
     {

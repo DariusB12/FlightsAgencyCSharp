@@ -1,0 +1,12 @@
+2024-03-19 11:35:40,791 [1] INFO UserDBRepository - Initializing the UserDBRepository with properties
+2024-03-19 11:35:40,797 [1] INFO FlightDBRepository - Initializing the FlightDBRepository with properties
+2024-03-19 11:35:40,801 [1] INFO FlightDBRepository - Entering findAllAvailable
+2024-03-19 11:35:40,802 [1] INFO DBUtils - Checking if exists a connection
+2024-03-19 11:35:40,805 [1] INFO DBUtils - Creating a new connection...
+2024-03-19 11:35:40,828 [1] INFO DBUtils - A new connection was created: Data Source=C:/Users/DariusName/Desktop/UBB sem4/MPP/ProiectC#/sqliteDBFlights/flightsSQLite.db;Version=3
+2024-03-19 11:35:40,873 [1] INFO FlightDBRepository - Exiting findAllAvailable with flights: System.Collections.Generic.List`1[ProjectCS.model.Flight]
+2024-03-19 11:35:40,875 [1] INFO UserDBRepository - Initializing TicketDBRepository with properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
+2024-03-19 11:35:40,876 [1] INFO UserDBRepository - Save in TicketDBRepository the ticket: ProjectCS.model.Ticket
+2024-03-19 11:35:40,876 [1] INFO UserDBRepository - validate the ticket
+2024-03-19 11:35:40,877 [1] INFO DBUtils - Checking if exists a connection
+2024-03-19 11:35:40,884 [1] INFO UserDBRepository - Too many seats bought
