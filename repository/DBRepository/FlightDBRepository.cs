@@ -110,7 +110,7 @@ namespace ProjectCS.repository.DBRepository
             throw new NotImplementedException();
         }
 
-        public void save(Flight entity)
+        public Flight save(Flight entity)
         {
             throw new NotImplementedException();
         }

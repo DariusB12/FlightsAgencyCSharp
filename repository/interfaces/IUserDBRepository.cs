@@ -14,5 +14,15 @@ namespace ProjectCS.repository.interfaces
         ///     null otherwise
         /// </returns>
         User findByusernameAndPassword(string username, string password);
+        
+        /// <summary>
+        /// Get a user based on the given username
+        /// </summary>
+        /// <param name="username">The user username</param>
+        /// <returns>
+        ///     User if username match
+        ///     null otherwise
+        /// </returns>
+        User findByUsername(string username);
     }
 }

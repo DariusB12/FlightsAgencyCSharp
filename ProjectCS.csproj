@@ -35,6 +35,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+        </Reference>
         <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
           <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
         </Reference>
@@ -58,10 +61,38 @@
         <Reference Include="System.Data.SQLite.Linq, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
           <HintPath>packages\System.Data.SQLite.Linq.1.0.118.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
         </Reference>
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Drawing.Design" />
+        <Reference Include="System.Drawing.Primitives">
+          <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Drawing.Primitives.dll</HintPath>
+        </Reference>
         <Reference Include="System.Web" />
+        <Reference Include="System.Windows">
+          <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Windows.Forms.DataVisualization">
+          <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.Forms.DataVisualization.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Windows.Forms.DataVisualization.Design">
+          <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+        </Reference>
         <Reference Include="System.Xml" />
+        <Reference Include="WindowsFormsApplication1, Version=1.0.0.0, Culture=neutral, processorArchitecture=X86">
+          <HintPath>packages\WindowsFormsApplication1.1.0.0.0\lib\net45\WindowsFormsApplication1.exe</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="controller\MainController.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="controller\MainController.Designer.cs">
+          <DependentUpon>MainController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="controller\SignInController.cs" />
+        <Compile Include="exception\Message.cs" />
+        <Compile Include="exception\ServiceException.cs" />
+        <Compile Include="exception\ValidationException.cs" />
         <Compile Include="model\Flight.cs" />
         <Compile Include="model\HasID.cs" />
         <Compile Include="model\Ticket.cs" />
@@ -76,8 +107,15 @@
         <Compile Include="repository\interfaces\IFlightDBRepository.cs" />
         <Compile Include="repository\interfaces\ITicketDBRepository.cs" />
         <Compile Include="repository\interfaces\IUserDBRepository.cs" />
+        <Compile Include="service\FlightService.cs" />
+        <Compile Include="service\TicketService.cs" />
+        <Compile Include="service\UserService.cs" />
+        <Compile Include="utils\factory\ContainerUtils.cs" />
+        <Compile Include="utils\factory\Factory.cs" />
+        <Compile Include="utils\PasswordEncoder.cs" />
         <Compile Include="validator\IValidator.cs" />
         <Compile Include="validator\TicketValidator.cs" />
+        <Compile Include="validator\UserValidator.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
@@ -87,7 +125,27 @@
       <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="App_Readme\Elmah.txt" />
       <Content Include="logger.txt" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="controller\MainController.resx">
+        <DependentUpon>MainController.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="controller\SignInController.resx">
+        <DependentUpon>SignInController.cs</DependentUpon>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <COMReference Include="System_Drawing">
+        <Guid>{D37E2A3E-8545-3A39-9F4F-31827C9124AB}</Guid>
+        <VersionMajor>2</VersionMajor>
+        <VersionMinor>4</VersionMinor>
+        <Lcid>0</Lcid>
+        <WrapperTool>tlbimp</WrapperTool>
+        <Isolated>False</Isolated>
+        <EmbedInteropTypes>True</EmbedInteropTypes>
+      </COMReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

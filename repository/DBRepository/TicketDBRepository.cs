@@ -31,11 +31,11 @@ namespace ProjectCS.repository.DBRepository
             throw new System.NotImplementedException();
         }
 
-        public void save(Ticket entity)
+        public Ticket save(Ticket entity)
         {
             log.InfoFormat("Save in TicketDBRepository the ticket: {0}",entity);
             log.Info("validate the ticket");
-            ticketValidator.validate(entity);
+            ticketValidator.Validate(entity);
             
             var con = DBUtils.getConnection(prop);
             
@@ -118,12 +118,15 @@ namespace ProjectCS.repository.DBRepository
                         comm4.Parameters.Add(paramIdFlightUpdate);
 
                         comm4.ExecuteNonQuery();
+
+                        entity.Id = generatedKey;
                         log.Info("Ticket added with success");
+                        return entity;
                     }
                     else
                     {
                         log.Info("Too many seats bought");
-                        throw new RepositoryException("Too many seats bought\n");
+                        return null;
                     }
                 }
             }

@@ -1,11 +1,12 @@
 ﻿using System;
+using ProjectCS.exception;
 using ProjectCS.model;
 
 namespace ProjectCS.validator
 {
     public class TicketValidator : IValidator<Ticket>
     {
-        public void validate(Ticket entity)
+        public void Validate(Ticket entity)
         {
             String errors ="";
             if(entity.NameClient == ""){

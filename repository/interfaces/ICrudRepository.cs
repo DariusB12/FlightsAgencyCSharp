@@ -5,13 +5,6 @@ using ProjectCS.model;
 
 namespace ProjectCS.repository.interfaces
 {
-    public class RepositoryException : ApplicationException
-    {
-        public RepositoryException() { }
-        public RepositoryException(string mess) : base(mess){}
-        public RepositoryException(string mess, Exception e) : base(mess, e) { }
-    }
-
     public interface ICrudRepository<ID, E> where E : HasID<ID>
     {
         /// <summary>
@@ -29,11 +22,13 @@ namespace ProjectCS.repository.interfaces
         IEnumerable<E> findAll();
 
         /// <summary>
-        /// Saves an entity
+        /// Saves an entity, in case of validation errors throws an exception
         /// </summary>
         /// <param name="entity">The entity</param>
-        /// <returns>The saved entity if we did not add. Null if the element was successfully added</returns>
-        void save(E entity);
+        /// <returns>The entity if saved successfully
+        ///             null otherwise
+        /// </returns>
+        E save(E entity);
 
         /// <summary>
         /// Deletes an entity
