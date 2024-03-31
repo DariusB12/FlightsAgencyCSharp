@@ -13,10 +13,6 @@ using WindowsFormsApplication1;
 
 namespace ProjectCS
 {
-    /// <summary>
-    /// CONFIGURARE LOG4NET - MERGE DOAR CU CALE ABSOLUTA
-    /// MERGE BRANCH JAVA
-    /// </summary>
     internal class Program
     {
         public static void Main(string[] args)
