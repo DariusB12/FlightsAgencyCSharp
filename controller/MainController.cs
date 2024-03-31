@@ -132,7 +132,7 @@ namespace WindowsFormsApplication1
         private Flight getSelectedFlight()
         {
             string flightString = textBoxSelectedFlight.Text;
-            if (flightString == null)
+            if (String.IsNullOrEmpty(flightString))
             {
                 return null;
             }

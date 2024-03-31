@@ -857,3 +857,35 @@
 2024-03-31 16:08:30,365 [5] INFO FlightDBRepository - Entering findByDestinationAndDate with destination: Bucurestifew date: 2025-05-17
 2024-03-31 16:08:30,365 [5] INFO DBUtils - Checking if exists a connection
 2024-03-31 16:08:30,365 [5] INFO FlightDBRepository - Exiting findByDestinationAndDate with flights: System.Collections.Generic.List`1[ProjectCS.model.Flight]
+2024-03-31 16:11:06,751 [1] INFO UserDBRepository - Initializing the UserDBRepository with properties
+2024-03-31 16:11:06,756 [1] INFO FlightDBRepository - Initializing the FlightDBRepository with properties
+2024-03-31 16:11:06,758 [1] INFO UserDBRepository - Initializing TicketDBRepository with properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
+2024-03-31 16:11:09,507 [1] INFO UserDBRepository - Find user by username bf and password bs
+2024-03-31 16:11:09,507 [1] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:11:09,512 [1] INFO DBUtils - Creating a new connection...
+2024-03-31 16:11:09,538 [1] INFO DBUtils - A new connection was created: Data Source=C:/Users/DariusName/Desktop/UBB sem4/MPP/ProiectC#/sqliteDBFlights/flightsSQLite.db;Version=3
+2024-03-31 16:11:09,589 [1] INFO UserDBRepository - Did not findByusernameAndPassword
+2024-03-31 16:11:15,597 [1] INFO UserDBRepository - Find user by username seniorita and password 1234
+2024-03-31 16:11:15,597 [1] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:11:15,604 [1] INFO UserDBRepository - Exiting findByusernameAndPassword with value ProjectCS.model.User
+2024-03-31 16:11:15,615 [4] INFO FlightDBRepository - Entering findAllAvailable
+2024-03-31 16:11:15,615 [4] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:11:15,619 [4] INFO FlightDBRepository - Exiting findAllAvailable with flights: System.Collections.Generic.List`1[ProjectCS.model.Flight]
+2024-03-31 16:12:11,658 [1] INFO UserDBRepository - Initializing the UserDBRepository with properties
+2024-03-31 16:12:11,664 [1] INFO FlightDBRepository - Initializing the FlightDBRepository with properties
+2024-03-31 16:12:11,665 [1] INFO UserDBRepository - Initializing TicketDBRepository with properties: System.Collections.Generic.Dictionary`2[System.String,System.String]
+2024-03-31 16:12:15,873 [1] INFO UserDBRepository - Find user by username seniorita and password 1234
+2024-03-31 16:12:15,873 [1] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:12:15,877 [1] INFO DBUtils - Creating a new connection...
+2024-03-31 16:12:15,908 [1] INFO DBUtils - A new connection was created: Data Source=C:/Users/DariusName/Desktop/UBB sem4/MPP/ProiectC#/sqliteDBFlights/flightsSQLite.db;Version=3
+2024-03-31 16:12:15,961 [1] INFO UserDBRepository - Exiting findByusernameAndPassword with value ProjectCS.model.User
+2024-03-31 16:12:15,972 [4] INFO FlightDBRepository - Entering findAllAvailable
+2024-03-31 16:12:15,972 [4] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:12:15,977 [4] INFO FlightDBRepository - Exiting findAllAvailable with flights: System.Collections.Generic.List`1[ProjectCS.model.Flight]
+2024-03-31 16:12:24,319 [4] INFO UserDBRepository - Save in TicketDBRepository the ticket: ProjectCS.model.Ticket
+2024-03-31 16:12:24,320 [4] INFO UserDBRepository - validate the ticket
+2024-03-31 16:12:24,320 [4] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:12:24,344 [4] INFO UserDBRepository - Ticket added with success
+2024-03-31 16:12:24,345 [4] INFO FlightDBRepository - Entering findAllAvailable
+2024-03-31 16:12:24,345 [4] INFO DBUtils - Checking if exists a connection
+2024-03-31 16:12:24,346 [4] INFO FlightDBRepository - Exiting findAllAvailable with flights: System.Collections.Generic.List`1[ProjectCS.model.Flight]
