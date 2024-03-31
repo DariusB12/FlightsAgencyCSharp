@@ -25,7 +25,7 @@ namespace ProjectCS.repository.interfaces
         /// Saves an entity, in case of validation errors throws an exception
         /// </summary>
         /// <param name="entity">The entity</param>
-        /// <returns>The entity if saved successfully
+        /// <returns>The entity with the generated id if it was saved successfully
         ///             null otherwise
         /// </returns>
         E save(E entity);
