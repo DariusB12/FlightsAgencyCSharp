@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq.Expressions;
 using log4net;
@@ -112,7 +113,7 @@ namespace ProjectCS.repository.DBRepository
             if (user != null)
             {
                 log.ErrorFormat("Username already taken {0}",entity.Username);
-                return entity;
+                return null;
             }
             
             using (var comm = con.CreateCommand())
@@ -129,10 +130,10 @@ namespace ProjectCS.repository.DBRepository
 
                 comm.Parameters.Add(paramUsername);
                 comm.Parameters.Add(paramPassword);
-                comm.ExecuteNonQuery();
-                
-                log.InfoFormat("User saved with success: username:{0}",entity.Username);
-                return null;
+                int generatedKey = Convert.ToInt32(comm.ExecuteScalar());
+                entity.Id = generatedKey;
+                log.InfoFormat("User saved with success: username:{0} id:{1}",entity.Username,entity.Id);
+                return entity;
             }
         }
 

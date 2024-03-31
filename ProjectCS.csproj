@@ -90,6 +90,12 @@
           <DependentUpon>MainController.cs</DependentUpon>
         </Compile>
         <Compile Include="controller\SignInController.cs" />
+        <Compile Include="controller\SignUpController.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="controller\SignUpController.Designer.cs">
+          <DependentUpon>SignUpController.cs</DependentUpon>
+        </Compile>
         <Compile Include="exception\Message.cs" />
         <Compile Include="exception\ServiceException.cs" />
         <Compile Include="exception\ValidationException.cs" />
@@ -112,6 +118,8 @@
         <Compile Include="service\UserService.cs" />
         <Compile Include="utils\factory\ContainerUtils.cs" />
         <Compile Include="utils\factory\Factory.cs" />
+        <Compile Include="utils\observer\Observable.cs" />
+        <Compile Include="utils\observer\Observer.cs" />
         <Compile Include="utils\PasswordEncoder.cs" />
         <Compile Include="validator\IValidator.cs" />
         <Compile Include="validator\TicketValidator.cs" />
@@ -134,6 +142,9 @@
       </EmbeddedResource>
       <EmbeddedResource Include="controller\SignInController.resx">
         <DependentUpon>SignInController.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="controller\SignUpController.resx">
+        <DependentUpon>SignUpController.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>

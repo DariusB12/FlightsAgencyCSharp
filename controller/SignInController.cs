@@ -139,7 +139,6 @@ namespace WindowsFormsApplication1
                         try
                         {
                                 User user = _userService.signIn(username, password);
-                                
                                 //use threads in order to not block every window after opening a new one
                                 var threadParameters = new System.Threading.ThreadStart(delegate { openNewMainWindow(user); });
                                 var thread = new System.Threading.Thread(threadParameters);
@@ -157,12 +156,23 @@ namespace WindowsFormsApplication1
                 {
                         MainController mainController = new MainController(_containerUtils,user);
                         mainController.Text = user.Username;
+                        mainController.Tag = user.Id;
                         mainController.ShowDialog();
                 }
 
                 private void buttonSignUp_Click(object sender, EventArgs e)
                 {
-                        throw new System.NotImplementedException();
+                        //use threads in order to not block every window after opening a new one
+                        var threadParameters = new System.Threading.ThreadStart(delegate { openNewSignUpWindow(); });
+                        var thread = new System.Threading.Thread(threadParameters);
+                        thread.Start();
+                }
+
+                private void openNewSignUpWindow()
+                {
+                        SignUpController signUpController = new SignUpController(_containerUtils);
+                        signUpController.Text = "SignUp New User";
+                        signUpController.ShowDialog();
                 }
         }
 }

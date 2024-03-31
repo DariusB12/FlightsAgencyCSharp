@@ -23,8 +23,8 @@ namespace ProjectCS.model
 
         public override string ToString()
         {
-            return "Destination: " + Destination + "  DepartureTime: " + DepartureDateTime +
-                   "  Airport: " + Airport + "  SeatsNo: " + SeatsNo;
+            return "Destination: " + Destination + ",DepartureTime: " + DepartureDateTime +
+                   ",Airport: " + Airport + ",SeatsNo: " + SeatsNo;
 
         }
 

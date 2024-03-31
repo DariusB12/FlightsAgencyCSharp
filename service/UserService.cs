@@ -22,20 +22,18 @@ namespace ProjectCS.service
             {
                 return user;
             }
-            else
-            {
-                throw new ServiceException("Invalid username or password\n");
-            }
+
+            throw new ServiceException("Invalid username or password\n");
         }
 
-        public void signUp(User user)
+        public User signUp(User user)
         {
             User userResult = userRepository.save(user);
             if (userResult != null)
             {
-                throw new ServiceException("Username already taken\n");
+                return userResult;
             }
+            throw new ServiceException("Username already taken\n");
         }
     }
-    
 }
